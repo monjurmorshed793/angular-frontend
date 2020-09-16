@@ -20,4 +20,13 @@ export class BikeService {
   getBikes(){
     return this.httpClient.get('/server/api/v1/bikes');
   }
+
+  getBike(id: number): any{
+    return this.httpClient.get('/server/api/v1/bikes/' + id);
+  }
+
+  createBigRegistration(bike): any{
+    const body = JSON.stringify(bike);
+    return this.httpClient.post('/server/api/v1/bikes', body, httpOptions);
+  }
 }
